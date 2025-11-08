@@ -47,14 +47,14 @@ const OnlineAnswerPage: React.FC = () => {
     return () => { document.title = originalTitle; };
   }, []);
 
-  // 根据URL参数更新页面内容
-  useEffect(() => {
-    const unitId = searchParams.get('unit_id');
-    const contentType = searchParams.get('content_type');
-    
-    if (unitId) {
-      updatePageContent(unitId, contentType);
-    }
+  // 根据URL参数更新页面内容
+  useEffect(() => {
+    const unitId = searchParams.get('unit_id');
+    const contentType = searchParams.get('content_type');
+    
+    if (unitId) {
+      updatePageContent(unitId, contentType);
+    }
   }, [searchParams]);
 
   // 从本地存储加载答案
@@ -70,7 +70,7 @@ const OnlineAnswerPage: React.FC = () => {
     }
   }, []);
 
-  const updatePageContent = (unitId: string, contentType: string | null) => {
+  const updatePageContent = (unitId: string, _contentType: string | null) => {
     const unitNames: Record<string, string> = {
       'unit1': '第一单元练习',
       'unit2': '第二单元练习',
